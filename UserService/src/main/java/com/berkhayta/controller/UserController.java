@@ -5,9 +5,11 @@ import com.berkhayta.dto.request.UserSaveRequestDto;
 import com.berkhayta.dto.request.UserUpdateRequestDto;
 import com.berkhayta.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@RefreshScope
 @RestController
 @RequestMapping(EndPoints.USER)
 @RequiredArgsConstructor

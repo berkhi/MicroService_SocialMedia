@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server-git
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/berkhi/Java14ConfigServer.git"
+          default-label: "main"
+          skip-sslvalidation: true
+          username: "berkhi"
+          password: ${JAVA14_GIT_TOKEN}

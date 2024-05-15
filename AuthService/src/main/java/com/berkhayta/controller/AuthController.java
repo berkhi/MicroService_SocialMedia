@@ -12,9 +12,11 @@ import com.berkhayta.utility.JwtTokenManager;
 import com.berkhayta.utility.TokenManager;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@RefreshScope
 @RestController
 @RequestMapping(EndPoints.AUTH)
 @RequiredArgsConstructor

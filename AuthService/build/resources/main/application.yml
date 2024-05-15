@@ -1,17 +1,8 @@
-server:
-  port: 9090
-
 spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: 1234
-    url: jdbc:postgresql://localhost:5432/SocialMediaAuthDB
-  jpa:
-    hibernate:
-      ddl-auto: update
-
-authservice:
-  secret:
-    secret-key: ${JAVA14_SECRET_KEY}
-    issuer: ${JAVA14_ISSUER}
+  cloud:
+    config:
+      uri: http://localhost:8888
+  config:
+    import: "configserver:"
+  application:
+    name: application-auth

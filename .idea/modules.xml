@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AuthService/SocialMediaMicroService.AuthService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AuthService/SocialMediaMicroService.AuthService.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ConfigServer/SocialMediaMicroService.ConfigServer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ConfigServer/SocialMediaMicroService.ConfigServer.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/UserService/SocialMediaMicroService.UserService.main.iml" filepath="$PROJECT_DIR$/.idea/modules/UserService/SocialMediaMicroService.UserService.main.iml" />
     </modules>
   </component>

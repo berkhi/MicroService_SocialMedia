@@ -3,4 +3,6 @@ dependencies {
     runtimeOnly libs.postgresql
     implementation libs.validator
     implementation libs.springCloudOpenFeign
+    implementation libs.springCloudConfigClient
+    implementation libs.springCloudBusAMQP
 }

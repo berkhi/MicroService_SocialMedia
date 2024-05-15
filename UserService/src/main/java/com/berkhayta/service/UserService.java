@@ -43,20 +43,20 @@ public class UserService {
 
 		UserProfile userProfile = userRepository.findByAuthId(userId)
 				.orElseThrow(() -> new UserServiceException(ErrorType.INVALID_USERPROFILE_ID));
-
-		if (dto.getAbout() != null) {
+		String trim = dto.getAbout().trim();
+		if (dto.getAbout() != null && !trim.isEmpty() && dto.getAbout().equals("string")) {
 			userProfile.setAbout(dto.getAbout());
 		}
-		if (dto.getPhoto() != null) {
+		if (dto.getPhoto() != null && !trim.isEmpty() && dto.getAbout().equals("string")) {
 			userProfile.setPhoto(dto.getPhoto());
 		}
-		if (dto.getPhone() != null) {
+		if (dto.getPhone() != null && !trim.isEmpty() && dto.getAbout().equals("string")) {
 			userProfile.setPhone(dto.getPhone());
 		}
-		if (dto.getAddress() != null) {
+		if (dto.getAddress() != null && !trim.isEmpty() && dto.getAbout().equals("string")) {
 			userProfile.setAddress(dto.getAddress());
 		}
-		if (dto.getEmail() != null) {
+		if (dto.getEmail() != null && !trim.isEmpty() && dto.getAbout().equals("string")) {
 			userProfile.setEmail(dto.getEmail());
 		}
 
