@@ -15,10 +15,10 @@ public class EndPoints {
 	
 	//methods:
 	public static final String REGISTER="/register";
+	public static final String REGISTERWITHRABBIT="/registerWithRabbit";
 	public static final String SAVE="/save";
 	public static final String UPDATE="/update";
 	public static final String DELETE="/delete";
-	public static final String ACTIVATE="/activate";
 	public static final String FINDALL="/findall";
 	public static final String FINDBYID="/findbyid";
 	

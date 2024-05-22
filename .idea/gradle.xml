@@ -9,9 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ApiGatewayService" />
             <option value="$PROJECT_DIR$/AuthService" />
             <option value="$PROJECT_DIR$/ConfigServer" />
             <option value="$PROJECT_DIR$/ConfigServerGit" />
+            <option value="$PROJECT_DIR$/PostService" />
             <option value="$PROJECT_DIR$/UserService" />
           </set>
         </option>

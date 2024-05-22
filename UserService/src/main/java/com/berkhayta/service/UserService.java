@@ -11,6 +11,7 @@ import com.berkhayta.mapper.UserMapper;
 import com.berkhayta.repository.UserRepository;
 import com.berkhayta.utility.JwtTokenManager;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +23,14 @@ public class UserService {
 	private final AuthManager authManager;
 
 	public Boolean save(UserSaveRequestDto dto) {
+		UserProfile save = userRepository.save(UserMapper.INSTANCE.toUserProfile(dto));
+		if (save == null)
+			throw new UserServiceException(ErrorType.INTERNAL_SERVER_ERROR);
+		return true;
+	}
+
+	@RabbitListener(queues = "queue.socialmedia.auth")
+	public Boolean saveWithRabbit(UserSaveRequestDto dto) {
 		UserProfile save = userRepository.save(UserMapper.INSTANCE.toUserProfile(dto));
 		if (save == null)
 			throw new UserServiceException(ErrorType.INTERNAL_SERVER_ERROR);
@@ -77,5 +86,11 @@ public class UserService {
 		userProfile.setStatus(EStatus.DELETED);
 		userRepository.save(userProfile);
 		return true;
+	}
+
+	public String getUserByAuthId(Long authId) {
+		UserProfile userProfile = userRepository.findByAuthId(authId)
+				.orElseThrow(() -> new UserServiceException(ErrorType.USER_NOT_FOUND));
+		return userProfile.getId();
 	}
 }

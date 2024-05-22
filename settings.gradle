@@ -4,4 +4,7 @@ include 'AuthService'
 findProject(':UserService:ConfigServer')?.name = 'ConfigServer'
 include 'ConfigServer'
 include 'ConfigServerGit'
+include 'PostService'
+include 'ApiGatewayService'
+
 

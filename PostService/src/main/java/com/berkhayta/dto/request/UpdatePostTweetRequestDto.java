@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-public class UserUpdateRequestDto {
-    String id;
-    String email;
-    String photo;
-    String phone;
-    String address;
-    String about;
+public class UpdatePostTweetRequestDto
+{
+    String tweetId;
+    Long authId;
+    String newContext;
+
 }

@@ -17,12 +17,12 @@ import java.util.Optional;
 
 @Component
 public class JwtTokenManager {
-//	@Value("${jwt.secret.secret-key}")
-//	String secretKey;
-//	@Value("${jwt.secret.issuer}")
-//	String issuer;
-	String secretKey = "JAVA14_AUTH_SECRET_SYSTEM";
-	String issuer = "JAVA14_ISSUER";
+	@Value("${jwt.secret.secret-key}")
+	String secretKey;
+	@Value("${jwt.secret.issuer}")
+	String issuer;
+//	String secretKey = "JAVA14_AUTH_SECRET_SYSTEM";
+//	String issuer = "JAVA14_ISSUER";
 	Long expireTime = 1000L * 60 * 15; // 15dakikalık bir zaman
 	
 	

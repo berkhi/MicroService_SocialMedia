@@ -171,7 +171,12 @@
 docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 ```
 
-
+## Todo list 5 16.05.2024 
+1. PostService yazınız. Bir user login olduktan sonra postservice aracılığı ile post atabilmelidir.
+2. User kendi attığı postları listeleyebilecek endpointleri olmalı
+3. User atılan tüm postları da görebileceği bir endpoint olmalı
+4. User kendi attığı postu silmeli
+5. Database siz belirleyin. (Mongo veya PostgreSql)
 
 
 

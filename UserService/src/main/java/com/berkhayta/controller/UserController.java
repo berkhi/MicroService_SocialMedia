@@ -37,4 +37,9 @@ public class UserController {
 		return ResponseEntity.ok(userService.deleteUserProfile(authId));
 	}
 
+	@GetMapping("/findByAuthId/{token}")
+	public String getUserIdFromToken(@PathVariable Long authId) {
+		return userService.getUserByAuthId(authId);
+	}
+
 }

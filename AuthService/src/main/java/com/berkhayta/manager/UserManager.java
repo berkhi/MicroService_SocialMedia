@@ -4,10 +4,7 @@ import com.berkhayta.constant.EndPoints;
 import com.berkhayta.dto.request.UserSaveRequestDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 
 @FeignClient(url = "http://localhost:9091/api/v1/user", name = "userManager", dismiss404 = true)
@@ -15,11 +12,9 @@ public interface UserManager {
 	@PostMapping(EndPoints.SAVE)
 	ResponseEntity<Boolean> save(@RequestBody UserSaveRequestDto dto);
 
-	@PutMapping(EndPoints.ACTIVATE + "/{authId}")
-	ResponseEntity<Boolean> activateUserProfile(@PathVariable("authId") Long authId);
+	@PutMapping("/updatestatus/{authId}")
+	ResponseEntity<String> updateUserStatus(@PathVariable Long authId);
 
-	@PutMapping("/delete/{authId}")
-	ResponseEntity<Boolean> deleteUserProfile(@PathVariable("authId") Long authId);
-
-
+	@DeleteMapping("/delete/{authId}")
+	ResponseEntity<String> deleteUser(@PathVariable Long authId);
 }
